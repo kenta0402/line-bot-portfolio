@@ -8,3 +8,7 @@
 ## code02（DB追加）
 
 <img width="150" height="150" alt="code02" src="https://github.com/user-attachments/assets/aed06eb4-8446-4263-b37e-acbd2d3c4d5e" />
+
+## code03（DB取り出し）
+
+<img width="150" height="150" alt="code03_png" src="https://github.com/user-attachments/assets/f80319e3-41be-4036-8a7a-630da54cfd8c" />
