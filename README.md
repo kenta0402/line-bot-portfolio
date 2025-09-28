@@ -7,4 +7,4 @@
 
 ## code02（DB追加）
 
-<img width="360" height="360" alt="code02" src="https://github.com/user-attachments/assets/aed06eb4-8446-4263-b37e-acbd2d3c4d5e" />
+<img width="150" height="150" alt="code02" src="https://github.com/user-attachments/assets/aed06eb4-8446-4263-b37e-acbd2d3c4d5e" />
