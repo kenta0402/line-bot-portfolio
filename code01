@@ -1,0 +1,56 @@
+import json
+import urllib.request
+import os
+
+# LINEチャネルアクセストークン（環境変数に設定しておく）
+LINE_TOKEN = os.environ.get('LINE_CHANNEL_ACCESS_TOKEN')
+
+# 返信処理関数
+def reply_message(reply_token, text):
+    url = "https://api.line.me/v2/bot/message/reply"
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": f"Bearer {LINE_TOKEN}"
+    }
+    data = {
+        "replyToken": reply_token,
+        "messages": [{"type": "text", "text": text}]
+    }
+    req = urllib.request.Request(
+        url,
+        data=json.dumps(data).encode("utf-8"),
+        headers=headers,
+        method="POST"
+    )
+    try:
+        with urllib.request.urlopen(req) as res:
+            body = res.read()
+            print("返信成功:", body)
+    except Exception as e:
+        print("返信エラー:", e)
+
+# Lambda 本体
+def lambda_handler(event, context):
+    # 受信データを辞書化
+    body = json.loads(event['body'])
+    
+    # events があるかチェック
+    if "events" in body and len(body["events"]) > 0:
+        event0 = body["events"][0]
+        
+        # メッセージイベントか確認
+        if event0["type"] == "message" and "message" in event0:
+            msg = event0["message"]["text"]
+            reply_token = event0["replyToken"]
+            
+            # 返信文言（固定）
+            reply_text = msg
+            
+            # LINEに返信
+            reply_message(reply_token, reply_text)
+    
+    # 200 OK を必ず返す
+    return {
+        "statusCode": 200,
+        "body": json.dumps({"message": "ok"})
+    }
