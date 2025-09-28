@@ -39,7 +39,9 @@
 
 ### 1️⃣ code01：オウム返し
 
-<img src="https://github.com/user-attachments/assets/55832faa-b5bc-4968-8046-971b0c0c2778" width="150" height="150" />
+<img src="/image/code01.png" alt="code01" width="150" height="150">
+
+
 
 **機能**  
 - 送信したメッセージをそのまま返信  
@@ -51,7 +53,7 @@
 
 ### 2️⃣ code02：DB追加
 
-<img src="https://github.com/user-attachments/assets/aed06eb4-8446-4263-b37e-acbd2d3c4d5e" width="150" height="150" />
+<img src="/image/code02.png" alt="code02" width="150" height="150">
 
 **機能**  
 - 送信したメッセージをDynamoDBに格納  
@@ -65,7 +67,7 @@
 
 ### 3️⃣ code03：DB取り出し
 
-<img src="https://github.com/user-attachments/assets/f80319e3-41be-4036-8a7a-630da54cfd8c" width="150" height="150" />
+<img src="/image/code03.png" alt="code03" width="150" height="150">
 
 **機能**  
 - 送信したキー（code02で返信されたもの）からDynamoDBのメッセージを取得して返信  
