@@ -1,0 +1,48 @@
+import os
+import json
+import requests
+
+OPENAI_API_KEY = os.environ['OPENAI_API_KEY']
+LINE_CHANNEL_ACCESS_TOKEN = os.environ['LINE_CHANNEL_ACCESS_TOKEN']
+
+def lambda_handler(event, context):
+    print("Received event:", json.dumps(event))
+
+    # LINEからのWebhookで受け取るbody
+    body = json.loads(event['body'])
+    user_message = body['events'][0]['message']['text']
+    reply_token = body['events'][0]['replyToken']
+
+    # ChatGPTに問い合わせ
+    response = requests.post(
+        "https://api.openai.com/v1/chat/completions",
+        headers={
+            "Authorization": f"Bearer {OPENAI_API_KEY}",
+            "Content-Type": "application/json"
+        },
+        json={
+            "model": "gpt-4o-mini",
+            "messages": [{"role": "user", "content": user_message}]
+        }
+    )
+    chatgpt_reply = response.json()['choices'][0]['message']['content']
+    print("ChatGPT reply:", chatgpt_reply)
+
+    # LINEに返信
+    requests.post(
+        "https://api.line.me/v2/bot/message/reply",
+        headers={
+            "Authorization": f"Bearer {LINE_CHANNEL_ACCESS_TOKEN}",
+            "Content-Type": "application/json"
+        },
+        json={
+            "replyToken": reply_token,
+            "messages": [{"type": "text", "text": chatgpt_reply}]
+        }
+    )
+
+    return {
+        "statusCode": 200,
+        "body": json.dumps("OK")
+    }
+
