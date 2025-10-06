@@ -23,6 +23,8 @@
 #### API
 - AWS API Gateway
   - Webhook受け取り・ルーティング
+- ChatGPT API
+  - チャットの受け取り・返信
 
 #### DB / ストレージ
 - AWS DynamoDB
