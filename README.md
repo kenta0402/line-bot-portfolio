@@ -37,7 +37,7 @@
 
 ## 🔹 Lambda関数一覧
 
-### 1️⃣ code01：オウム返し
+### code01：オウム返し
 
 <img src="/image/code01.png" alt="code01" width="150" height="150">
 
@@ -51,7 +51,7 @@
 
 ---
 
-### 2️⃣ code02：DB追加
+### code02：DB追加
 
 <img src="/image/code02.png" alt="code02" width="150" height="150">
 
@@ -65,7 +65,7 @@
 
 ---
 
-### 3️⃣ code03：DB取り出し
+### code03：DB取り出し
 
 <img src="/image/code03.png" alt="code03" width="150" height="150">
 
@@ -78,11 +78,22 @@
 
 ---
 
+### code04：chatgptとの会話
+
+<img src="/image/code03.png" alt="code03" width="150" height="150">
+
+**機能**  
+- 送信したメッセージをChatGPTを送信し、ChatGPTからの返信を取得して返信  
+
+**環境変数**  
+- `LINE_CHANNEL_ACCESS_TOKEN`：チャネルアクセストークン  
+- `OPENAI_API_KEY`：ChatGPTのアクセストークン
+
 ## 🔹 ポイント
 - `code01`：返信専用  
 - `code02`：保存＋返信  
-- `code03`：取得＋返信
-
+- `code03`：取得＋返信  
+- `code04`：ChatGPT
 ---
 
 💡 **補足**
