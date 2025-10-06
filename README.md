@@ -80,10 +80,10 @@
 
 ### code04：chatgptとの会話
 
-<img src="/image/code03.png" alt="code03" width="150" height="150">
+<img src="/image/code04.png" alt="code04" width="150" height="150">
 
 **機能**  
-- 送信したメッセージをChatGPTを送信し、ChatGPTからの返信を取得して返信  
+- ChatGPTとの会話  
 
 **環境変数**  
 - `LINE_CHANNEL_ACCESS_TOKEN`：チャネルアクセストークン  
@@ -93,7 +93,7 @@
 - `code01`：返信専用  
 - `code02`：保存＋返信  
 - `code03`：取得＋返信  
-- `code04`：ChatGPT
+- `code04`：ChatGPTとの会話
 ---
 
 💡 **補足**
